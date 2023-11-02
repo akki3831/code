@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fabo.css">
+    <link rel="stylesheet" href="MC.css">
+    <title>Manage Clients</title>
+</head>
+<body>
+    <nav>
+        
+            <div class="navbar">
+              <i class='bx bx-menu'></i>
+              <div class="logo"><a href="#">FABO</a></div>
+              <div class="nav-links">
+                <div class="sidebar-logo">
+                  <span class="logo-name">FABO</span>
+                  <i class='bx bx-x' ></i>
+                </div>
+                <ul class="links">
+                  
+                  <li>
+                    <a href="#">Client Management</a>
+                    <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+                  
+                    <ul class="htmlCss-sub-menu sub-menu">
+                      <li><a href="#">Add Client</a></li>
+                      <div class="popup">
+                        <div class=""
+                      </div>
+                      <li><a href="#">Clients</a></li>
+                     
+                      <li class="more">
+                        <span><a href="#">More</a>
+                        <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                      </span>
+                        <ul class="more-sub-menu sub-menu">
+                          <li><a href="#">Neumorphism</a></li>
+                          <li><a href="#">Pre-loader</a></li>
+                          <li><a href="#">Pre-loader</a></li>
+                          <li><a href="#">Glassmorphism</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">Client User Management</a>
+                    <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                    <ul class="js-sub-menu sub-menu">
+                      <li><a href="client user.html">Add User</a></li>
+                      <li><a href="MC.html">Manage User</a></li>
+                     
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#">Admin User Management</a>
+                    <i class='bx bxs-chevron-down js-arrow arrow '></i>
+                    <ul class="js-sub-menu sub-menu">
+                      <li><a href="#">Add admin</a></li>
+                      <form action="">
+                        
+                      </form>
+                      <li><a href="#">Admin</a></li>
+                    
+                </ul>
+            </li>
+          
+          </ul>
+        </div>
+        <div class="search-box">
+          <i class='bx bx-search'></i>
+          <div class="input-box">
+            <input type="text" placeholder="Search...">
+          </div>
+        </div>
+      </div>    
+                        </nav>
+
+                        <div class="card" style="margin-top: 90px; padding: 20px; width: 500px;height: 120%;">
+                          <h2>Store Information</h2>
+                          <form id="storeForm" style="width: 80%; max-width: 400px; margin: 0 auto; width: 400px;">
+                           
+                            
+                              
+                  
+                            <label for="storeCode">Store Code:</label>
+                              <input type="text" id="storeCode" name="storeCode" required>
+                  
+                              <label for="storeName">Store Name:</label>
+                              <input type="text" id="storeName" name="storeName" required>
+                  
+                              <label for="state">State:</label>
+                              <input type="text" id="state" name="state" required>
+                  
+                              <label for="city">City:</label>
+                              <input type="text" id="city" name="city" required>
+                  
+                              <label for="phone">Phone Number:</label>
+                              <input type="tel" id="phone" name="phone" required>
+                  
+                              <button type="submit" style="font-size: 14px;">Submit</button>
+                          
+                            </form>
+                        </div>
+
+                      
+                      
+                  
+    <div class="filter-section">
+        <label for="stateFilter">State:</label>
+        <select id="stateFilter">
+            <option value="">All</option>
+            <option value="New York">New York</option>
+    
+        </select>
+
+        <label for="cityFilter">City:</label>
+        <select id="cityFilter">
+            <option value="">All</option>
+            <option value="New York City">New York City</option>
+    
+        </select>
+    </div>
+
+   
+  
+    <table class="client-table">
+        <tr>
+            <th>Store Code</th>
+            <th>Store Name</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Phone Number</th>
+            <th>Actions</th>
+        </tr>
+        <tr>
+            <td>12345</td>
+            <td>Store 1</td>
+            <td>New York</td>
+            <td>New York City</td>
+            <td>123-456-7890</td>
+            <td>
+                <button onclick="viewClient(this)">View</button>
+                <button onclick="editClient(this)">Edit</button>
+                <button onclick="deleteClient(this)">Delete</button>
+            </td>
+        </tr>
+        
+    </table>
+
+    
+    <script>
+       
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var storeForm = document.getElementById("storeForm");
+            var clientTable = document.querySelector(".client-table");
+
+            storeForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                var storeCode = document.getElementById("storeCode").value;
+                var storeName = document.getElementById("storeName").value;
+                var state = document.getElementById("state").value;
+                var city = document.getElementById("city").value;
+                var phone = document.getElementById("phone").value;
+
+                // Create a new table row and populate it with form data
+                var newRow = clientTable.insertRow(-1); // -1 appends to the end of the table
+                var cells = [
+                    storeCode,
+                    storeName,
+                    state,
+                    city,
+                    phone,
+                    '<button onclick="viewClient(this)">View</button> <button onclick="editClient(this)">Edit</button> <button onclick="deleteClient(this)">Delete</button>'
+                ];
+
+                for (var i = 0; i < cells.length; i++) {
+                    var cell = newRow.insertCell(i);
+                    cell.innerHTML = cells[i];
+                }
+
+                // Clear the form fields after submission
+                storeForm.reset();
+            });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+          
+        });
+    </script>
+</body>
+</html>

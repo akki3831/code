@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Html CRUD with Pure JavaScript</title>
+    <link rel="stylesheet" href="fabo.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+      
+      <div class="navbar">
+        <i class='bx bx-menu'></i>
+        <div class="logo"><a href="#">FABO</a></div>
+        <div class="nav-links">
+          <div class="sidebar-logo">
+            <span class="logo-name">FABO</span>
+            <i class='bx bx-x' ></i>
+          </div>
+          <ul class="links">
+            
+            <li>
+              <a href="#">Client Management</a>
+              <i class='bx bxs-chevron-down htmlcss-arrow arrow  '></i>
+            
+              <ul class="htmlCss-sub-menu sub-menu">
+                <li><a href="index.html">Add Client</a></li>
+                <div class="popup">
+                  <div class=""
+                </div>
+                <li><a href="MC.html">Manage Clients</a></li>
+               
+                <li class="more">
+                  <span><a href="#">More</a>
+                  <i class='bx bxs-chevron-right arrow more-arrow'></i>
+                </span>
+                  <ul class="more-sub-menu sub-menu">
+                    <li><a href="#">Neumorphism</a></li>
+                    <li><a href="#">Pre-loader</a></li>
+                    <li><a href="#">Glassmorphism</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="#">Client User Management</a>
+              <i class='bx bxs-chevron-down js-arrow arrow '></i>
+              <ul class="js-sub-menu sub-menu">
+                <li><a href="client user.html">Add User</a></li>
+                <li><a href="#">Manage User</a></li>
+               
+              </ul>
+            </li>
+            <li>
+              <a href="#">Admin User Management</a>
+              <i class='bx bxs-chevron-down js-arrow arrow '></i>
+              <ul class="js-sub-menu sub-menu">
+                <li><a href="admin user.html">Add admin</a></li>
+                <form action="">
+                  
+                </form>
+                <li><a href="#">Admin</a></li>
+                
+              </ul>
+            </li>
+          
+          </ul>
+        </div>
+        <div class="search-box">
+          <i class='bx bx-search'></i>
+          <div class="input-box">
+            <input type="text" placeholder="Search...">
+          </div>
+        </div>
+      </div>
+    </nav>
+    
+    </nav>
+    <div class="card">
+        <h2>Store Information</h2>
+        <form id="storeForm">
+            <label for="storeName">Store Name:</label>
+            <input type="text" id="storeName" name="storeName" required>
+
+            <label for="storeCode">Store Code:</label>
+            <input type="text" id="storeCode" name="storeCode" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="primaryPhone">Primary Phone:</label>
+            <input type="tel" id="primaryPhone" name="primaryPhone" required>
+
+            <label for="secondaryPhone">Secondary Phone:</label>
+            <input type="tel" id="secondaryPhone" name="secondaryPhone">
+
+            <label for="state">State:</label>
+            <input type="text" id="state" name "state" required>
+
+            <label for="city">City:</label>
+            <input type="text" id="city" name="city" required>
+
+            <label for="address">Full Address:</label>
+            <textarea id="address" name="address" required></textarea>
+
+            <label for="gmbProfile">GMB Profile Link:</label>
+            <input type="url" id="gmbProfile" name="gmbProfile" required>
+
+            <button type="button" onclick="addStore()">Submit</button>
+        </form>
+    </div>
+    <table class="store-table">
+        <tr>
+            <th>Store Name</th>
+            <th>Store Code</th>
+            <th>Email</th>
+            <th>Primary Phone</th>
+            <th>Secondary Phone</th>
+            <th>State</th>
+            <th>City</th>
+            <th>Full Address</th>
+            <th>GMB Profile Link</th>
+        </tr>
+    </table>
+    <script>
+        function addStore() {
+            var storeForm = document.getElementById("storeForm");
+            var table = document.querySelector(".store-table");
+            var newRow = table.insertRow(-1); // -1 to insert at the end
+
+            // Create an array to hold the form field values
+            var values = [
+                storeForm.storeName.value,
+                storeForm.storeCode.value,
+                storeForm.email.value,
+                storeForm.primaryPhone.value,
+                storeForm.secondaryPhone.value,
+                storeForm.state.value,
+                storeForm.city.value,
+                storeForm.address.value,
+                '<a href="' + storeForm.gmbProfile.value + '">Google My Business</a>'
+            ];
+
+            // Loop to add cell values to the new row
+            for (var i = 0; i < values.length; i++) {
+                var cell = newRow.insertCell(i);
+                cell.innerHTML = values[i];
+            }
+
+            // Clear the form after adding the row
+            storeForm.reset();
+        }
+    </script>
+</body>
+</html>

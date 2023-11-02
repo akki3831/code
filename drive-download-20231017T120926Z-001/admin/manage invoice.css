@@ -1,0 +1,132 @@
+/* Basic styles for the navbar */
+.navbar {
+    background-color: #f05a8e;
+    color: #fff;
+    padding: 5px 0; /* Decreased padding */
+    display: flex;
+    align-items: center;
+}
+
+
+.logo {
+    padding: 10px; 
+}
+
+
+.logo img {
+    max-width: 90px; /* Decreased image size */
+    height: auto;
+}
+
+/* Style for the navbar links */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar li {
+    display: inline;
+    margin: 0 50px; /* Decreased margin */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px; /* Decreased font size */
+}
+
+/* Style for the navbar links on hover */
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Style for the main content */
+.content {
+    padding: 15px;
+}
+/* Style for the card container */
+.card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px; /* Adjusted margin for spacing */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: inline-block; /* Display cards side by side */
+    width: 23%; /* Adjusted width to fit four cards in a row */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.card h2 {
+    font-size: 18px;
+    color: #333;
+}
+
+.card p {
+    font-size: 14px;
+    color: #666;
+}
+/* Add this to your CSS file */
+
+/* Styles for the popup container */
+.popup-container {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Add this style to display form elements in a line-wise layout */
+.popup form {
+    display: flex;
+    flex-direction: column;
+}
+/* Style for small input boxes with border radius */
+.popup form input[type="text"],
+.popup form input[type="date"],
+.popup form select {
+    width: 80%;
+    padding: 8px;
+    margin: 6px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input[type="date"] {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 8px;
+}
+
+/* Add CSS to style the table row hover effect */
+table.table tbody tr:hover {
+    background-color: #f0f0f0; /* Change the background color on hover */
+}
+
+/* Styles for the popup content */
+.popup {
+    background: #fff;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    position: relative;
+}
+
+/* Close button for the popup */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Add additional styling for form fields and button as needed */
+

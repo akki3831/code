@@ -1,0 +1,52 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+#storeForm {
+    width: 100%; /* Adjust the width as needed */
+    height: 450px; /* Adjust the height as needed */
+    margin: 1px auto; /* Center the form horizontally */
+}
+.client-table {
+    border-collapse: collapse;
+    width: 100%; 
+    margin-top: 10px;
+}
+
+.client-table th, .client-table td {
+    border: 1px solid #000; 
+    padding: 6px;
+}
+
+.client-table th {
+    background-color: #f2f2f2; 
+}
+.store-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 50px auto;
+    margin-top: 20px;
+}
+
+.store-table th, .store-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+
+.store-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.store-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.store-table tr:nth-child(odd) {
+    background-color: #fff;
+}
